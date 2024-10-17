@@ -1,30 +1,80 @@
-header{
+/* Estilo del header */
+header {
+    background-color: #C0C0C0;
+    padding: 1em;
+}
+
+/* Contenedor del header */
+#contenedor-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#C0C0C0;
-    color: white;
-    padding: 1em;
-    text-align: center;
+    width: 100%;
 }
-#logo{
-    font-size: 1.5em;
-    font-weight: bold;
+
+/* Estilo del logo */
+#logo {
+    width: 30%;
     display: flex;
     align-items: center;
 }
+
 #logo img {
     width: 100%;
-    margin-right: 0.5em;
-   
+    height: auto;
 }
-#navegador{
-    display: inline-block; 
-    vertical-align: top;
-}
-#navegador ul{
-    list-style-type: none; 
-    display: flex; 
-    gap: 5%; 
 
+/* Contenedor del navegador */
+#navContenedor {
+    width: 70%;
+}
+
+/* Estilo del navegador */
+#navegador {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navegador ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5em; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de los enlaces del menú */
+#navegador ul li a {
+    text-align: center;
+    font-size: 1em;
+    color:#640014;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+footer{
+    background-color: #C0C0C0;
+    padding: 1em;
+    text-align: center;
+
+}
+
+/* Diseño responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #contenedor-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #logo {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    #navContenedor {
+        width: 100%;
+    }
+
+    #navegador ul {
+        gap: 0.5em;
+    }
 }
