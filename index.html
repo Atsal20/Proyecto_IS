@@ -8,12 +8,14 @@
         <meta name="author" content="The Mens Fashion"> 
         <title>The Mens Fashion</title>
         <link rel="stylesheet" href="/FRONTEND/styles/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <header>
-            <div id="contenedor-header">
+            <div class="contenedor">
                 <div id="logo">
-                    <img src="/FRONTEND/img/Logo.webp" alt="Logo">
+                    <img src="/FRONTEND/img/Logo.webp" alt="Logo de The Men's Fashion">
                 </div>
                 <div id="navContenedor">
                     <nav id="navegador">
@@ -27,28 +29,69 @@
                         </ul>
                     </nav>
                 </div>
+                <div id="buscador_contenedor">
+                    <form id="buscador">
+                        <input type="text" placeholder="Buscar...">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <div id="MovilidadUsuario">
+                    <div id="carrito">
+                        <a href="/FRONTEND/public/carrito.html"><img src="/FRONTEND/img/carrito.webp" alt="Carrito de compras"></a>
+                    </div>
+                    <div id="usuario">
+                        <a href="/FRONTEND/public/login.html"><img src="/FRONTEND/img/usuario.webp" alt="Usuario"></a>
+                    </div>
+                </div>·
             </div>
         </header>
-        <main>
-            <h1>bj</h1>
-        </main>
+        <main id="app">
+            <section id="intro">
+                <article>
+                    <h1>Bienvenido a The Men's Fashion</h1>
+                    <p>En nuestra tienda, encontrarás los mejores estilos para caballero, combinando elegancia y comodidad.</p>
+                </article>
+            </section>
+            <section id="carrusel">
+                <h2>Carrusel de artículos y promociones</h2>
+                <!-- Aquí se colocaría el carrusel -->
+            </section>
+            <section id="productos-destacados">
+                <article>
+                    <h2>Productos Destacados</h2>
+                    <p>Aquí podrás ver los productos más vendidos y novedades.</p>
+                    <!-- Vue.js Products Section -->
+                    <div v-if="productos.length">
+                        <div v-for="producto in productos" :key="producto.id" class="producto">
+                            <img :src="producto.imagen" :alt="producto.nombre">
+                            <h3>{{ producto.nombre }}</h3>
+                            <p>{{ producto.descripcion }}</p>
+                            <span>{{ producto.precio }} €</span>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p>No hay productos disponibles en este momento.</p>
+                    </div>
+                </article>
+            </section>
+        </main>>
         <footer>
-            <div id="contenedor-footer">
+            <div class="contenedor">
                 <div id="footer-redes">
                     <h3>Siguenos</h3>
                     <div id="redes">
                         <ul>
-                            <div id="sm">
-                            <li><a href="https://www.facebook.com/" target="_blank"><img src="/FRONTEND/img/facebook.webp" alt="Facebook"></a></li>
+                            <div class="sm">
+                            <li><a href="https://www.facebook.com/" ><img src="/FRONTEND/img/Redes/facebook.webp" alt="Facebook"></a></li>
                             </div>
-                            <div id="sm">
-                            <li><a href="https://www.instagram.com/" target="_blank"><img src="/FRONTEND/img/insta.webp" alt="Instagram"></a></li>
+                            <div class="sm">
+                            <li><a href="https://www.instagram.com/" ><img src="/FRONTEND/img/Redes/insta.webp" alt="Instagram"></a></li>
                             </div>
-                            <div id="sm">
-                            <li><a href="https://www.twitter.com/" target="_blank"><img src="/FRONTEND/img/twitter.webp" alt="Twitter"></a></li>
+                            <div class="sm">
+                            <li><a href="https://www.twitter.com/"><img src="/FRONTEND/img/Redes/TwiterX.webp" alt="Twitter"></a></li>
                             </div>
-                            <div id="sm">
-                            <li><a href="https://www.whatsapp.com/" target="_blank"><img src="/FRONTEND/img/whats.webp" alt="Whatsapp"></a></li>
+                            <div class="sm">
+                            <li><a href="https://www.whatsapp.com/" ><img src="/FRONTEND/img/Redes/whats.webp" alt="Whatsapp"></a></li>
                             </div>
                         </ul>
                     </div>
@@ -58,6 +101,25 @@
                 </div>
             </div>
         </footer>
+        <script>
+            new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        productos: []
+                    };
+                },
+                mounted() {
+                    axios.get('/api/productos-destacados') // Asegúrate de que esta URL esté bien definida en el backend
+                        .then(response => {
+                            this.productos = response.data;
+                        })
+                        .catch(error => {
+                            console.error('Error al cargar productos:', error);
+                        });
+                }
+            });
+        </script>
 
     </body>
 

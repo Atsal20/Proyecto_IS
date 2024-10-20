@@ -1,46 +1,50 @@
+:root {
+    --color-primario: #070614;
+    --color-secundario: #c0c0c0;
+    --color-terciario: #640014; 
+    --color-4: #F8F4F2;
+    --font-family: 'Montserrat',sans-serif;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
+    font-family: var(--font-family);
+    background-color: var(--color-4);
+    
 }
 /* Estilo del header */
 header {
-    background-color: #C0C0C0;
+    background-color: var(--color-secundario); 
     padding: 1em;
 }
-
 /* Contenedor del header */
-#contenedor-header {
+.contenedor{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
-
 /* Estilo del logo */
 #logo {
-    width: 30%;
+    width: 25%;
     display: flex;
     align-items: center;
 }
-
 #logo img {
     width: 100%;
     height: auto;
 }
-
 /* Contenedor del navegador */
 #navContenedor {
-    width: 70%;
+    width: 65%;
     display: flex;
     flex-wrap: wrap;
 }
-
 /* Estilo del navegador */
 #navegador {
     display: flex;
     justify-content:center;
-    width: 100%;}
-
+    width: 100%;
+}
 #navegador ul {
     list-style-type: none;
     display: flex;
@@ -49,28 +53,127 @@ header {
     padding: 0;
     flex-wrap: wrap;
 }
-
 /* Estilo de los enlaces del menú */
 #navegador ul li a {
     text-align: center;
     font-size: 1.3vw;
-    color:#640014;
+    color:var(--color-primario);
     text-decoration: none;
     padding: 0.5em 1em;
 }
+/*Estilo del buscador */
+#buscador_contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#buscador {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buscador input[type="text"] {
+    width: 70%;
+    padding: 0.5em;
+    font-size: 1.2vw;
+    border: 1px solid var(--color-primario);
+    border-radius: 0.5em;
+}
+#buscador button[type="submit"] {
+    padding: 0.5em 1em;
+    font-size: 1.2vw;
+    background-color: var(--color-primario);
+    color: var(--color-4);
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+/*Estilo de acceso de usuario */
+#MovilidadUsuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+
+}
+#MovilidadUsuario img {
+    width: 100%;
+    height: auto;
+}
+#carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+#carrito img {
+    width: 50%;
+    height: auto;
+}
+
+#usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+#usuario img {
+    width: 50%;
+    height: auto;
+}
+
+#productos-destacados .producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 1.5%;
+    padding: 1em;
+    border: 1px solid var(--color-secundario);
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#productos-destacados .producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#productos-destacados .producto img {
+    width: 80%;
+    height: auto;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+#productos-destacados .producto h3 {
+    font-size: 1.2em;
+    color: var(--color-primario);
+    margin: 0.5em 0;
+}
+
+#productos-destacados .producto p {
+    color: var(--color-terciario);
+}
+
+#productos-destacados .producto span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+
+/* Estilo del footer */
 footer{
-    background-color: #C0C0C0;
+    background-color:var(--color-secundario);
     padding: 1em;
     box-sizing: border-box;
     overflow: hidden;
 
-}
-#contenedor-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
 }
 #logo_f{
     width: 15%;
@@ -89,8 +192,8 @@ footer{
     flex-wrap: wrap;
     text-align: center;
 }
-#foter-redes h3 {
-    color: #640014;
+#footer-redes h3{
+    color: var(--color-primario);
     font-size: 1.5vw;
     margin-bottom: 0.5em;
     width: 100%;
@@ -113,25 +216,25 @@ footer{
 #redes li a {
     text-align: center;
     font-size: 1vw;
-    color:#640014;
+    color:var(--color-primario);
     text-decoration: none;
     padding: 0.5em 1em;
 }
 
-#sm {
+.sm {
     text-align: center;
 }
 
-#sm img {
+.sm img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-#sm img:hover {
-    transform: scale(1.2);
+.sm img:hover {
+    transform: scale(1.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
