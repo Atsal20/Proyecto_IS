@@ -14,20 +14,20 @@ body {
 header {
     background-color: var(--color-secundario); 
     padding: 1em;
+    position: relative;
 }
 /* Contenedor del header */
 .contenedor{
+    width: 100%; 
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
 }
 /* Estilo del logo */
 #logo {
-    width: 25%;
-    display: flex;
-    align-items: center;
+    position: relative;
+    left: 0; top: 0; width: 20%; height: 100%;
 }
 #logo img {
     width: 100%;
@@ -35,23 +35,24 @@ header {
 }
 /* Contenedor del navegador */
 #navContenedor {
-    width: 65%;
+    position: absolute;
     display: flex;
-    flex-wrap: wrap;
+    left: 20%; top: 0; width: 65%; height:50%;
 }
+
 /* Estilo del navegador */
 #navegador {
     display: flex;
     justify-content:center;
+    align-items: center;
     width: 100%;
 }
 #navegador ul {
     list-style-type: none;
     display: flex;
-    gap: 1.5em; 
+    gap: 1.2em; 
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
 }
 /* Estilo de los enlaces del menú */
 #navegador ul li a {
@@ -61,28 +62,27 @@ header {
     text-decoration: none;
     padding: 0.5em 1em;
 }
-/*Estilo del buscador */
+    /*Estilo del buscador */
 #buscador_contenedor {
+    position: absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    left:20%; top: 50%; width: 65%; height: 50%;
 }
 #buscador {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 #buscador input[type="text"] {
-    width: 70%;
-    padding: 0.5em;
+    display: flex;
     font-size: 1.2vw;
     border: 1px solid var(--color-primario);
     border-radius: 0.5em;
 }
 #buscador button[type="submit"] {
-    padding: 0.5em 1em;
     font-size: 1.2vw;
     background-color: var(--color-primario);
     color: var(--color-4);
@@ -92,36 +92,31 @@ header {
 }
 /*Estilo de acceso de usuario */
 #MovilidadUsuario {
+    position: absolute;
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-    width: 10%;
-
+    left: 85%; top: 0; width: 15%; height:100%;
+}
+#MovilidadUsuario ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.2em; 
+    margin: 0;
+    padding: 0;
+}
+#MovilidadUsuario ul li a {
+    text-align: center;
+    font-size: 1.3vw;
+    color:var(--color-primario);
+    text-decoration: none;
+    padding: 0.5em 1em;
 }
 #MovilidadUsuario img {
-    width: 100%;
-    height: auto;
-}
-#carrito {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-}
-#carrito img {
     width: 50%;
     height: auto;
-}
-
-#usuario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-}
-#usuario img {
-    width: 50%;
-    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 #productos-destacados .producto {
