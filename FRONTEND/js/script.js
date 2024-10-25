@@ -1,4 +1,4 @@
-fetchProductos() {
+fetchProductos(); {
     try {
       const response = await axios.get('http://localhost:8080/api/productos');
       console.log(response.data.content); // Muestra los productos en la consola
@@ -7,5 +7,5 @@ fetchProductos() {
     } catch (error) {
       console.error('Error fetching products:', error);
     }
-  }
+}
   
