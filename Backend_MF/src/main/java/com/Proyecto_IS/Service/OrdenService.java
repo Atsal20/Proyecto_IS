@@ -1,11 +1,9 @@
 package com.Proyecto_IS.Service;
 
-import com.Proyecto_IS.Entidades.Carrito;
 import com.Proyecto_IS.Entidades.Orden;
-import com.Proyecto_IS.Entidades.Productos;
-import com.Proyecto_IS.Repository.CarritoRepository;
+import com.Proyecto_IS.Entidades.Usuario;
 import com.Proyecto_IS.Repository.OrdenRepository;
-import lombok.Data;
+import com.Proyecto_IS.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,25 +17,23 @@ public class OrdenService {
     private OrdenRepository ordenRepository;
 
     @Autowired
-    private CarritoRepository carritoRepository;
+    private UsuarioRepository usuarioRepository;
 
-    public Orden crearOrden(Long carritoId) {
-        Carrito carrito = carritoRepository.findById(carritoId).orElseThrow(() -> new RuntimeException("Carrito no encontrado"));
-
-        Orden orden = new Orden();
-        orden.setUsuario(carrito.getUsuario());
-        orden.setFecha(new Date(Fecha));
-        orden.setProductos(carrito.getProductos());
-        orden.setTotal(carrito.getProductos().stream().mapToDouble(Productos::getPrecio).sum());
-
-        // Vaciar el carrito después de crear la orden
-        carrito.getProductos().clear();
-        carritoRepository.save(carrito);
-
+    public Orden createOrden(Orden orden) {
+        orden.setFechaCreacion(new Date());
+        orden.setEstado("Pendiente");
         return ordenRepository.save(orden);
     }
 
-    public List<Orden> obtenerOrdenesPorUsuario(Long usuarioId) {
+    public List<Orden> getOrdenesByUsuarioId(Long usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
         return ordenRepository.findByUsuarioId(usuarioId);
     }
+
+    public Orden getOrdenById(Long id) {
+        return ordenRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Orden no encontrada"));
+    }
+
 }

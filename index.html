@@ -8,8 +8,6 @@
         <meta name="author" content="The Mens Fashion"> 
         <title>The Mens Fashion</title>
         <link rel="stylesheet" href="/FRONTEND/styles/style.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <header>
@@ -42,36 +40,8 @@
                 </div>
             </div>
         </header>
-        <main id="app">
-            <section id="intro">
-                <article>
-                    <h1>Bienvenido a The Men's Fashion</h1>
-                    <p>En nuestra tienda, encontrarás los mejores estilos para caballero, combinando elegancia y comodidad.</p>
-                </article>
-            </section>
-            <section id="carrusel">
-                <h2>Carrusel de artículos y promociones</h2>
-                <!-- Aquí se colocaría el carrusel -->
-            </section>
-            <section id="productos-destacados">
-                <article>
-                    <h2>Productos Destacados</h2>
-                    <p>Aquí podrás ver los productos más vendidos y novedades.</p>
-                    <!-- Vue.js Products Section -->
-                    <div v-if="productos.length">
-                        <div v-for="producto in productos" :key="producto.id" class="producto">
-                            <img :src="producto.imagen" :alt="producto.nombre">
-                            <h3>{{ producto.nombre }}</h3>
-                            <p>{{ producto.descripcion }}</p>
-                            <span>{{ producto.precio }} €</span>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <p>No hay productos disponibles en este momento.</p>
-                    </div>
-                </article>
-            </section>
-        </main>>
+        <main id="App">
+        </main>
         <footer>
             <div class="contenedor">
                 <div id="footer-redes">
@@ -98,26 +68,7 @@
                 </div>
             </div>
         </footer>
-        <script>
-            new Vue({
-                el: '#app',
-                data() {
-                    return {
-                        productos: []
-                    };
-                },
-                mounted() {
-                    axios.get('/api/productos-destacados') // Asegúrate de que esta URL esté bien definida en el backend
-                        .then(response => {
-                            this.productos = response.data;
-                        })
-                        .catch(error => {
-                            console.error('Error al cargar productos:', error);
-                        });
-                }
-            });
-        </script>
-
+        <script></script>
     </body>
 
 </html>

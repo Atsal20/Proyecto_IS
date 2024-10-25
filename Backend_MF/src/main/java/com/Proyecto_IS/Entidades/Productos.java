@@ -1,7 +1,9 @@
 package com.Proyecto_IS.Entidades;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -14,18 +16,17 @@ public class Productos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private  String nombre;
     private  String descripcion;
     private  Double precio;
     private  String imagenURL;
+    private Integer stock;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @ManyToOne
-    @JoinTable(name = "productos_tallas",
-            joinColumns = @JoinColumn(name = "producto_id"),
-            inverseJoinColumns = @JoinColumn(name = "talla_id"))
-    private List<Talla> tallas;
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleOrden> detalleOrden;
 }

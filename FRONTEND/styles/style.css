@@ -119,49 +119,6 @@ header {
     object-fit: cover;
 }
 
-#productos-destacados .producto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    margin: 1.5%;
-    padding: 1em;
-    border: 1px solid var(--color-secundario);
-    border-radius: 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#productos-destacados .producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-#productos-destacados .producto img {
-    width: 80%;
-    height: auto;
-    border-radius: 1em;
-    margin-bottom: 1em;
-}
-
-#productos-destacados .producto h3 {
-    font-size: 1.2em;
-    color: var(--color-primario);
-    margin: 0.5em 0;
-}
-
-#productos-destacados .producto p {
-    color: var(--color-terciario);
-}
-
-#productos-destacados .producto span {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--color-primario);
-}
-
-
 /* Estilo del footer */
 footer{
     background-color:var(--color-secundario);
@@ -215,11 +172,9 @@ footer{
     text-decoration: none;
     padding: 0.5em 1em;
 }
-
 .sm {
     text-align: center;
 }
-
 .sm img {
     width: 2.5rem;
     height: 2.5rem;
@@ -227,7 +182,6 @@ footer{
     object-fit: cover;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-
 .sm img:hover {
     transform: scale(1.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
