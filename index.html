@@ -11,14 +11,13 @@
     </head>
     <body>
         <header>
-            <div id="contenedor-header">
+            <div class="contenedor">
                 <div id="logo">
-                    <img src="/FRONTEND/img/Logo.webp" alt="Logo">
+                   <a href="/index.html"><img src="/FRONTEND/img/Logo.webp" alt="Logo de The Men's Fashion"></a> 
                 </div>
                 <div id="navContenedor">
                     <nav id="navegador">
                         <ul>
-                            <li><a href="/index.html">Home</a></li>
                             <li><a href="/FRONTEND/public/productos.html">Productos</a></li>
                             <li><a href="/FRONTEND/public/novedades.html">Novedades</a></li>
                             <li><a href="/FRONTEND/public/Categorias.html">Categorías</a></li>
@@ -27,37 +26,61 @@
                         </ul>
                     </nav>
                 </div>
+                <div id="buscador_contenedor">
+                    <form id="buscador">
+                        <input type="text" placeholder="Buscar...">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <div id="MovilidadUsuario">
+                    <ul>
+                        <li><a href="/FRONTEND/public/carrito.html"><img src="/FRONTEND/img/carrito.webp" alt="Carrito de compras"></a></li>
+                        <li><a href="/FRONTEND/public/login.html"><img src="/FRONTEND/img/usuario.webp" alt="Usuario"></a></li>
+                    </ul>    
+                </div>
             </div>
         </header>
         <main>
-            <h1>bj</h1>
+            <template>
+                <div id="app">
+                  <router-view></router-view>
+                </div>
+              </template>
+              
+              <script>
+              export default {
+                name: 'App'
+              };
+              </script>
+              
         </main>
         <footer>
-            <div id="contenedor-footer">
-                    <div id="footer-nav">
-                        <nav>
-                            <ul>
-                                <li><a href="/index.html">Home</a></li>
-                                <li><a href="/FRONTEND/public/productos.html">Productos</a></li>
-                                <li><a href="/FRONTEND/public/novedades.html">Novedades</a></li>
-                                <li><a href="/FRONTEND/public/Categorias.html">Categorías</a></li>
-                                <li><a href="/FRONTEND/public/contacto.html">Contacto</a></li>
-                                <li><a href="/FRONTEND/public/Redes.html">Redes Sociales</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div id="footer-redes">
+            <div class="contenedor">
+                <div id="footer-redes">
+                    <h3>Siguenos</h3>
+                    <div id="redes">
                         <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><img src="/FRONTEND/img/facebook.webp" alt="Facebook"></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><img src="/FRONTEND/img/instagram.webp" alt="Instagram"></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><img src="/FRONTEND/img/twitter.webp" alt="Twitter"></a></li>
-                            <li><a href="https://www.whatsapp.com/" target="_blank"><img src="/FRONTEND/img/whatsapp.webp" alt="Whatsapp"></a></li>
+                            <div class="sm">
+                            <li><a href="https://www.facebook.com/" ><img src="/FRONTEND/img/Redes/facebook.webp" alt="Facebook"></a></li>
+                            </div>
+                            <div class="sm">
+                            <li><a href="https://www.instagram.com/" ><img src="/FRONTEND/img/Redes/insta.webp" alt="Instagram"></a></li>
+                            </div>
+                            <div class="sm">
+                            <li><a href="https://www.twitter.com/"><img src="/FRONTEND/img/Redes/TwiterX.webp" alt="Twitter"></a></li>
+                            </div>
+                            <div class="sm">
+                            <li><a href="https://www.whatsapp.com/" ><img src="/FRONTEND/img/Redes/whats.webp" alt="Whatsapp"></a></li>
+                            </div>
                         </ul>
+                    </div>
+                    <div id="logo_f">
+                        <img src="/FRONTEND/img/Logo.webp" alt="Logo">
                     </div>
                 </div>
             </div>
         </footer>
-
+        <script></script>
     </body>
 
 </html>
