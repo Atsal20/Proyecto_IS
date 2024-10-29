@@ -6,6 +6,7 @@
         <ul>
           <li v-for="producto in productos" :key="producto.id">
             <h2>{{ Productos.nombre }}</h2>
+            <img :src="producto.imagen_url" alt="Imagen del producto"/>
             <p>{{ Productos.descripcion }}</p>
             <p>Precio: {{ Productos.precio }}</p>
             <p>Talla: {{ Productos.Talla }}</p>
@@ -32,7 +33,7 @@
     methods: {
       async fetchProductos() {
         try {
-          const response = await axios.get('http://localhost:3306/api/productos');
+          const response = await axios.get('/productos');
           this.productos = response.data.content; 
           this.loading = false;
         } catch (error) {
