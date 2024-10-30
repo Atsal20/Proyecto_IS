@@ -1,19 +1,19 @@
 :root {
     --color-primario: #070614;
-    --color-secundario: #c0c0c0;
+    --color-secundario: rgba(192, 192, 192,0.5);
     --color-terciario: #640014; 
     --color-4: #F8F4F2;
     --font-family: 'Montserrat',sans-serif;
 }
 body {
     font-family: var(--font-family);
-    background-color: var(--color-4);
+    background-color: white;
     
 }
 /* Estilo del header */
 header {
     background-color: var(--color-secundario); 
-    padding: 1em;
+    padding: 0.5em;
     position: relative;
 }
 /* Contenedor del header */
