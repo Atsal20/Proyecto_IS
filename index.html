@@ -15,6 +15,13 @@
                 <div id="logo">
                    <a href="/index.html"><img src="/FRONTEND/img/Logo.webp" alt="Logo de The Men's Fashion"></a> 
                 </div>
+                <button id="menu-btn" class="menu-btn">☰</button>
+                <script>
+                document.getElementById('menu-btn').addEventListener('click', function() {
+                    document.getElementById('navContenedor').classList.toggle('active'),
+                    document.getElementById('MovilidadUsuario').classList.toggle('active');
+                });
+                </script>
                 <div id="navContenedor">
                     <nav id="navegador">
                         <ul>
@@ -46,7 +53,7 @@
         <br>
         <table>
             <tr>
-            <center><h1 style="font: size 30px">Chamarras 2da al 50%</h1></center>
+            <h1 style="font: size 30px">Chamarras 2da al 50%</h1>
             </tr>
             <tr>
                 <th><img src="/FRONTEND/img/chamarra1.png" alt="chamarra1" width="233px" height="464px"></th>
@@ -61,7 +68,7 @@
         <img src="/FRONTEND/img/bannercita.png" alt="bannercita" width="100%">
         <table>
             <tr>Ç
-            <center><h1 style="font: size 30px">Los más vistos</h1></center>
+            <h1 style="font: size 30px">Los más vistos</h1>
             </tr>
             <tr>
                 <th><img src="/FRONTEND/img/masvistos1.png" alt="masvistos1" width="233px" height="464px"></th>
